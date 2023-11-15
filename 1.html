@@ -1,0 +1,58 @@
+<a id="cb_post_title_url" class="postTitle2 vertical-middle" href="https://www.cnblogs.com/nkwy2012/p/6016247.html">
+    <span role="heading" aria-level="2">linux 查看是否安装perl模块</span>
+    
+
+
+
+</a>
+
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body" class="blogpost-body blogpost-body-html">
+<p>这里介绍两种linux中查看perl模块是否安装的方法，一种是对于单体的模块，一种是对于群体的。</p>
+<p><strong>单体验证：</strong></p>
+<blockquote>
+<p>[root@root ~]# perl -MShell&nbsp;-e&nbsp;"print\"module installed\n\""<br>module installed</p>
+
+</blockquote>
+<p>这里使用-M后边紧跟着Shell这个perl模块，如果输出module installed结果。那么此模块是存在在系统中的。</p>
+<blockquote>
+<p>[root@root ~]# perl -MMail::Sender&nbsp;-e&nbsp;"print\"module installed\n\""<br>Can't locate Mail/Sender.pm in @INC&nbsp;(@INC contains:&nbsp;/usr/local/lib/perl5 /usr/local/share/perl5&nbsp;/usr/lib/perl5/vendor_perl&nbsp;/usr/share/perl5/vendor_perl&nbsp;/usr/lib/perl5&nbsp;/usr/share/perl5&nbsp;.).<br>BEGIN failed--compilation aborted.</p>
+
+</blockquote>
+<p>如果出现类似于这种Can't locate。。。的提示，那么证明你系统中没有安装此模块。</p>
+<p>&nbsp;</p>
+<p><strong>群体验证：</strong></p>
+<p>这里所谓的群体验证只有一种方式，那么就是使用一个脚本来输出系统中所有已安装的perl脚本：</p>
+<blockquote>
+<p>#!/usr/bin/perl<br>use strict;<br>use ExtUtils::Installed;</p>
+<p>my $inst&nbsp;= ExtUtils::Installed-&gt;new();</p>
+<p>my @modules&nbsp;=&nbsp;$inst-&gt;modules();</p>
+<p>foreach&nbsp;&nbsp;(@modules)&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; my &nbsp;$ver&nbsp;=&nbsp;$inst-&gt;version($_)&nbsp;||&nbsp;"???";<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("%-22s -Version-&nbsp;%-22s\n",&nbsp;$_,&nbsp;$ver);<br>}<br>exit;</p>
+
+</blockquote>
+<p>运行得到的结果为：</p>
+<blockquote>
+<p>DBD::Oracle &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Version- 1.16 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>DBI &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Version- 1.611 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>ExtUtils::Install &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Version- 1.54 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>Perl &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Version- 5.8.8 &nbsp;</p>
+
+</blockquote>
+<p>&nbsp;</p>
+</div>
+<div class="clear"></div>
+<div id="blog_post_info_block" role="contentinfo">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+		</div>
+		<div class="postDesc">posted @ 
+<span id="post-date" data-last-update-days="2571.056308369052" data-date-created="BlogServer.Application.Dto.BlogPost.BlogPostDto" data-date-updated="2016-10-31 16:13">2016-10-31 16:13</span>&nbsp;
+<a href="https://www.cnblogs.com/nkwy2012/">nkwy2012</a>&nbsp;
+阅读(<span id="post_view_count">4832</span>)&nbsp;
+评论(<span id="post_comment_count">0</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=6016247" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(6016247);return false;">收藏</a>&nbsp;
+<a href="javascript:void(0)" onclick="reportManager.report({ currentUserId: '', targetType: 'blogPost', targetId: '6016247', targetLink: 'https://www.cnblogs.com/nkwy2012/p/6016247.html', title: 'linux 查看是否安装perl模块' })">举报</a>
+</div>
+</div>
