@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Tutorial_Phylogenetic_Analysis_系统发育分析"
+title:  "Tutorial_Phylogenetic_Analysis"
 date:   2025-02-27 20:59:00 +0000
 categories: Tutorial
 ---
