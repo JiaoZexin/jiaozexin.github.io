@@ -5,6 +5,9 @@ date:   2025-04-03 21:55:00 +0000
 categories: Note
 ---
 
+The spatial scale of dispersal revealed by admixture tracts [Doi](https://doi.org/10.1111/eva.12829)
+
+The contribution of ancient admixture to reproductive isolation between European sea bass lineages[Doi](https://doi.org/10.1002/evl3.169)
 
 **Nucleotide diversity（核苷酸多样性）** 是一种常用的 **衡量种群遗传多样性** 的指标，反映的是一个种群中任意两个个体在某一段DNA序列上的平均差异程度。
 
