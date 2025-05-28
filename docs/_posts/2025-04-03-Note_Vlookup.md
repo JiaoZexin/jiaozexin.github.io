@@ -6,4 +6,4 @@ categories: Note
 ---
 
 
-[查看 PDF 文件](pdf/20250403-Vlookup_multiple.pdf)
+[查看 PDF 文件](../pdf/20250403-Vlookup_multiple.pdf)
