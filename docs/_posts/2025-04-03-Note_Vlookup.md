@@ -7,3 +7,5 @@ categories: Note
 
 
 [查看 PDF 文件](../pdf/20250403-Vlookup_multiple.pdf)
+
+you can [get the PDF]({{https://jiaozexin.github.io}}/pdf/20250403-Vlookup_multiple.pdf) directly.
